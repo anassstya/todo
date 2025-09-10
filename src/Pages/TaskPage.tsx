@@ -5,12 +5,11 @@ import search from "../assets/search.png";
 import "../styles/App.scss";
 import {useSelector} from "react-redux";
 import TaskWrapper from "../Components/TaskWrapper.tsx";
-import Header from "../Components/Header.tsx";
-import Footer from "../Components/Footer.tsx";
 import {Link} from "react-router-dom";
+import type {RootState} from "../store.tsx";
 
 export default function TaskPage() {
-    const tasks = useSelector(state => state.tasks.tasks);
+    const tasks = useSelector((state: RootState) => state.tasks.tasks);
     const [showForm, setShowForm] = useState(false);
     const toggleForm = () => setShowForm(!showForm);
 
